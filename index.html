@@ -1,0 +1,69 @@
+<style>
+@font-face{
+  font-family: SantasSleigh;
+  src: url('font/SantasSleighFull.ttf')
+}
+body {
+  margin: 0;
+  background-color: #166e4b;
+  color: white;
+  text-shadow: 2px 2px red;
+  font-family: SantasSleigh;
+  font-size: 4em;
+  width:80%;
+  text-align:center;
+  position:absolute;
+  left:10%;
+}
+a {
+  color: white;
+}
+a:visited {
+  color: white;
+}
+a: active {
+  color: white;
+}
+</style>
+<body>
+
+<h1>Merry Christmas <name id='name_tag'>__name__</name> !</h1>
+
+<p id="personal_message"></p>
+
+<p id="game_desc">__game_desc__</p>
+
+<a id="game_link" href=""><h4>Click here to claim your game!</h4></a>
+
+</body>
+<script>
+
+data = {
+  Akiko: {
+    personal_message: "I am so lucky to have you as a sister.  I know you like puzzle games, so I got you this hand crafted puzzle adventure!  Love James",
+    game_link: "https://www.humblebundle.com/gift?key=w8afqK67B6Z3butX",
+    game_desc: '<iframe src="//player.vimeo.com/video/36015613" width="500" height="331" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/36015613"></p>'
+  },
+  Dad: {
+    personal_message: "Thank you for being the best father!  Due to the busy nature of your life I have chosen the two most relaxing games in existence.  <p>Mountain and Proteus</p> Love James",
+    game_link: "https://www.humblebundle.com/gift?key=YYtqFEHNh8H5tHYH",
+    game_desc: '<iframe width="853" height="480" src="//www.youtube.com/embed/rpkpuoq6y9s" frameborder="0" allowfullscreen></iframe><p><iframe src="//player.vimeo.com/video/99098990?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>'
+  },
+  Mum: {
+    personal_message: "Thank you for being the best mum!  I was thinking of when you used to play TriTryst and how nice it was for you have to have a thoughtful relaxing game.  So to fill the void, I got you a game called Lyne.  Love James",
+    game_link: "https://www.humblebundle.com/gift?key=tS8DByHExUzMFqHC",
+    game_desc: '<iframe width="560" height="315" src="//www.youtube.com/embed/MDQudjTzoLw" frameborder="0" allowfullscreen></iframe>'
+  },
+  John: {
+    personal_message: "Thank you for being the best brother!  I love you so much.   I bought you Planetary Annihilation so we can play multiplayer games hang out and have fun!",
+    game_link: "https://www.humblebundle.com/s?gift=DZyqKT8s8bZyCf4x",
+    game_desc: '<iframe width="560" height="315" src="//www.youtube.com/embed/ZE8QgqCiV8Q" frameborder="0" allowfullscreen></iframe>'
+  }
+}
+
+var name = window.location.hash.slice(1)
+name_tag.innerText = name;
+personal_message.innerHTML = data[name].personal_message
+game_desc.innerHTML = data[name].game_desc
+game_link.href = data[name].game_link
+</script>
